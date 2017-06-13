@@ -170,6 +170,30 @@ std::cin >> input_value;
 double i = { 3.14 };
 ```
 
+--with -std=c++11 but not error, just warnning [-Wnarrowing]
+
+```
+-*- mode: compilation; default-directory: "~/code/cpp/cpp_primer5th/solution/Cpp-Primer/ch02/" -*-
+Compilation started at Sun Jun 11 17:14:01
+
+g++   -std=c++11 t.cpp  -o t.exe && ./t.exe
+t.cpp: In function ‘int main()’:
+t.cpp:96:18: warning: narrowing conversion of ‘3.1400000000000001e+0’ from ‘double’ to ‘int’ inside { } [-Wnarrowing]
+     int i = {3.14};
+                  ^
+
+Compilation finished at Sun Jun 11 17:14:01
+```
+my gcc version
+````
+ g++ --version
+g++ (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
+
+
 (c): --if you declared 'wage' before, it's right. Otherwise, you'll get a error:
     error: use of undeclared identifier 'wage'
 ```cpp
